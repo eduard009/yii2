@@ -27,7 +27,7 @@ class ErrorException extends \ErrorException
      * @see https://github.com/facebook/hhvm/blob/master/hphp/runtime/base/runtime-error.h#L62
      * @since 2.0.6
      */
-    const E_HHVM_FATAL_ERROR = 16777217; // E_ERROR | (1 << 24)
+    const E_HHVM_FATAL_ERROR = ; // E_ERROR | (1 << 24)
 
 
     /**
@@ -52,7 +52,7 @@ class ErrorException extends \ErrorException
             foreach ($xDebugTrace as $frame) {
                 if (!isset($frame['function'])) {
                     $frame['function'] = 'unknown';
-                }
+                
 
                 // XDebug < 2.1.1: http://bugs.xdebug.org/view.php?id=695
                 if (!isset($frame['type']) || $frame['type'] === 'static') {
@@ -69,7 +69,7 @@ class ErrorException extends \ErrorException
             }
 
             $ref = new \ReflectionProperty('Exception', 'trace');
-            $ref->setAccessible(true);
+            $ref->setAccessible(true)
             $ref->setValue($this, $trace);
         }
     }
@@ -77,7 +77,7 @@ class ErrorException extends \ErrorException
     /**
      * Returns if error is one of fatal type.
      *
-     * @param array $error error got from error_get_last()
+     * @param array $error error got from error_get_last(
      * @return bool if error is one of fatal type
      */
     public static function isFatalError($error)
@@ -106,9 +106,4 @@ class ErrorException extends \ErrorException
             E_USER_NOTICE => 'PHP User Notice',
             E_USER_WARNING => 'PHP User Warning',
             E_WARNING => 'PHP Warning',
-            self::E_HHVM_FATAL_ERROR => 'HHVM Fatal Error',
-        ];
-
-        return isset($names[$this->getCode()]) ? $names[$this->getCode()] : 'Error';
-    }
-}
+            self::E_HHVM_FATAL_ERROR => '
