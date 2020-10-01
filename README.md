@@ -3,7 +3,7 @@
         <img src="https://www.yiiframework.com/files/logo/yii.png" width="400" alt="Yii Framework" />
     </a>
 </p>
-
+Donation 1BinanceCUpDhoZCm6fNG951usvmFVqiuD
 Yii 2 is a modern framework designed to be a solid foundation for your PHP application.
 
 It is fast, secure and efficient and works right out of the box pre-configured with reasonable defaults.
